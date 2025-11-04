@@ -1,9 +1,7 @@
 @echo off
-
 :: Forzar que este script use el JDK en lugar del JRE
 set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_202
 set PATH=%JAVA_HOME%\bin;%PATH%
-
 :: Test attempt to run Minecraft with commandline arguments.
 :: Eg "launchClient -channel 2"
 :: Currently must be run from within the mod dev folder.
@@ -100,6 +98,4 @@ REM finally run Minecraft:
 call gradlew setupDecompWorkspace
 call gradlew build
 call gradlew runClient
-if "!-replaceable!"=="true" (
-    goto :launchLoop
-)
+... (4 líneas restantes)

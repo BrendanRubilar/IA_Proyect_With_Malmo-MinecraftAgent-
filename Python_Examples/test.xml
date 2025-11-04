@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <About><Summary>Dos agentes ejemplo</Summary></About>
+
+  <ServerSection>
+    <ServerHandlers>
+      <!-- Generador de mundo simple -->
+      <FlatWorldGenerator generatorString="3;7,2*3,2;1;"/>
+      <!-- Dibujos / decorador opcional -->
+      <DrawingDecorator>
+        <DrawCuboid x1="0" y1="46" z1="0" x2="10" y2="46" z2="10" type="grass"/>
+      </DrawingDecorator>
+      <!-- Finalizar servidor cuando termine cualquier agente -->
+      <ServerQuitWhenAnyAgentFinishes/>
+    </ServerHandlers>
+  </ServerSection>
+
+  <AgentSection mode="Survival">
+    <Name>AgentA</Name>
+    <AgentStart>
+      <Placement x="1.5" y="47.0" z="1.5" yaw="0"/>
+    </AgentStart>
+    <AgentHandlers>
+      <DiscreteMovementCommands/>
+      <ObservationFromFullStats/>
+    </AgentHandlers>
+  </AgentSection>
+
+  <AgentSection mode="Survival">
+    <Name>AgentB</Name>
+    <AgentStart>
+      <Placement x="2.5" y="47.0" z="2.5" yaw="180"/>
+    </AgentStart>
+    <AgentHandlers>
+      <DiscreteMovementCommands/>
+      <ObservationFromFullStats/>
+    </AgentHandlers>
+  </AgentSection>
+</Mission>

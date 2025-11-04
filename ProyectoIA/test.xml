@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <About>
+    <Summary/>
+  </About>
+  <ServerSection>
+    <ServerInitialConditions>
+        <Time><StartTime>1</StartTime></Time>
+    </ServerInitialConditions>
+        <ServerHandlers>
+            <FlatWorldGenerator generatorString="3;7,2*3,2;1;"/>
+            <MazeDecorator>
+                <SizeAndPosition width="20" length="20" height="1" xOrigin="0" yOrigin="46" zOrigin="0"/>
+                
+                <Block type="stone_brick"/> 
+                
+                <Gap type="air"/> 
+                
+                <Floor type="grass"/>
+
+                <Ceiling type="glass"/>
+
+                <Seed>random</Seed>
+            </MazeDecorator>
+        </ServerHandlers>
+  </ServerSection>
+  <AgentSection mode="Survival">
+    <Name>Cristina</Name>
+    <AgentStart>
+      <Placement x="4.5" y="46.0" z="1.5" pitch="30" yaw="0"/>
+    </AgentStart>
+    <AgentHandlers>
+      <DiscreteMovementCommands/>
+      <ObservationFromFullStats/>
+      <RewardForTouchingBlockType>
+        <Block reward="-100.0" type="water" behaviour="onceOnly"/>
+        <Block reward="100.0" type="lit_redstone_ore" behaviour="onceOnly"/>
+      </RewardForTouchingBlockType>
+      <RewardForSendingCommand reward="-1" />
+      <AgentQuitFromTouchingBlockType>
+          <Block type="water" />
+          <Block type="lit_redstone_ore" />
+      </AgentQuitFromTouchingBlockType>
+    </AgentHandlers>
+  </AgentSection>
+</Mission>
